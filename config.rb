@@ -47,10 +47,28 @@
 #   end
 # end
 
+###
+# AR and Models
+###
+set :db, 'db/site.db'
+
+require 'active_record'
+ActiveRecord::Base.establish_connection(
+    :adapter => "sqlite3",
+    :database  => db
+)
+
+require 'db/model'
+unless File.exists?(db)
+  require 'db/migrate' 
+  require 'db/seed'
+end
+
+
+
+# -----------------------------
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
 
 # Build-specific configuration
@@ -66,6 +84,12 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+
+  if Article.count > 0
+    Article.all.each do |article|
+      page "/news/#{article.slug}.html", :proxy => "templates/news.html", :ignore => true, :locals => {:title => article.title, :content => article.content} 
+    end
+  end
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
