@@ -1,10 +1,12 @@
 #categories
 	ol
 	  - for c in @categories do
-	    li = c.name
+	    li: a[href="/categories/#{c.slug}"] = c.name
 
 
 #news
 	ul
 		- for article in @acticles do 
-			li: a[href=acticle_path] article.title
+			li: a[href="/news/#{article.slug}"] = article.title
+
+= paginate @acticles
