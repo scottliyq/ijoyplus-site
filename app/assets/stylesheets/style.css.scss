@@ -1,0 +1,218 @@
+@charset "UTF-8";
+/* CSS Document */
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0; }
+  
+ul {
+  list-style: none; }
+
+body {
+  background: #fff;
+  line-height: 1.25em;
+  color: #333;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-size-adjust: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+input, button, select, textarea {
+  outline: none;
+  font-size: 14px; }
+
+input:placeholder {
+  color: #000;
+  line-height: 30px; }
+
+textarea {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  resize: none; }
+
+.clear {
+  height: 1px;
+  line-height: 1px;
+  font-size: 1px;
+  clear: both;
+  margin-top: -1px; }
+
+a {
+  text-decoration: none; 
+  color: #333
+}
+a:hover{
+  color: #0C5E9F;
+}
+.floleft {
+  float: left; }
+
+.floright {
+  float: right; }
+
+.font_gray_d, .font_gray_d a {
+  color: #727272; }
+
+.font_black, .font_black a {
+  color: #333; }
+
+.font_orange, .font_orange a {
+  color: #FD7B23; }
+
+.font_white, .font_white a {
+  color: #ffffff; }
+
+.font_gray, .font_gray a {
+  color: #999; }
+
+.font_blue, .font_blue a {
+  color: #0C5E9F; }
+
+.font_red, .font_red a {
+  color: red; }
+
+.font_white, .font_white a {
+  color: white; }
+
+.font_10 {
+  font-size: 10px; }
+
+.font_16 {
+  font-size: 16px; }
+
+.font_18 {
+  font-size: 18px; }
+
+.font_14 {
+  font-size: 14px;
+  line-height: 18px; }
+  
+
+  
+/******app下载页面*****/  
+#app{
+	background:image-url("bg.jpg") repeat-x;
+	width:100%;
+	height:768px;
+  .topbox{
+    width: 915px;
+    height: 108px;
+    margin: 0 auto;
+    .logo{
+      width: 224px;
+      height: 66px;
+      float: left;
+      margin-top: 15px;
+    }
+    .topmenu{
+      margin-top: 60px;
+      float: right;
+      text-align: right;
+      font-size: 14px;
+       a{
+        background: image-url("line.png") no-repeat right center; 
+        padding: 0 15px 0 12px;
+        &:last-child{
+          background: none;
+          padding-right: 0
+        }
+      }
+    }
+  }
+  .midbox{
+    width: 100%;
+    height: 550px;
+    background: image-url("appboxbg.jpg") no-repeat top center;
+    position:relative;
+    .appbg1{
+      width:483px;
+      height:550px;
+      background: image-url("appbg1.png") no-repeat top center;
+      position:absolute;
+      top:0;
+      right:0;
+    }
+    .appbg2{
+      width:300px;
+      height:550px;
+      background: image-url("appbg2.png") no-repeat top center;
+      position:absolute;
+      top:0;
+      left:0;
+    }
+    .dlbox{
+      width: 915px;
+      margin: 0 auto;
+      padding: 70px 0 0 0;
+      height: 436px;
+      background: image-url("apps.png") no-repeat 0 70px;
+      .dlbtns{
+        width: 430px;
+        padding:255px 0 0 490px;
+        div{
+          width: 187px;
+          height: 54px;
+          float: left;
+          margin: 10px;
+          position: relative;
+          a{
+            width: 127px;
+            height: 47px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding:7px 0 0 60px;
+            font-size:16px;
+            line-height:20px;
+            background-image:image-url("appbtns.png");
+            text-shadow:1px 1px 0 #fff;
+            &.iPhone{
+              background-position: 0 0;
+              &:hover{
+               background-position: 0 -118px;  
+              }
+            }
+            &.iPhone-ipa{
+              background-position: -205px 0;
+              &:hover{
+               background-position: -205px -118px;  
+              }
+            }
+            &.iPad{
+              background-position: 0 -59px;
+              &:hover{
+               background-position: 0 -177px;  
+              }
+            }
+            &.Android-apk{
+              background-position: -205px -59px;
+              &:hover{
+               background-position: -205px -177px;  
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer{
+    width:915px;
+    margin:0 auto;
+    padding:30px 0;
+    font-size: 14px;
+    .follow{
+      background:image-url("appbtns.png") 0 -254px no-repeat;
+      padding:3px 30px 0 28px;
+    }
+    .contact{
+      background:image-url("appbtns.png") 0 -296px no-repeat;
+      padding:3px 0 0 28px;
+    }
+  }
+}
+
+

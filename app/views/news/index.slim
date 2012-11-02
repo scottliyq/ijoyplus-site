@@ -1,0 +1,10 @@
+#categories
+	ol
+	  - for c in @categories do
+	    li = c.name
+
+
+#news
+	ul
+		- for article in @acticles do 
+			li: a[href=acticle_path] article.title
