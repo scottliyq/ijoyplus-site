@@ -35,3 +35,7 @@ Terrier::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 end
+
+CMS_URL_GENERATING = "http://localhost:1234/news"
+STATIC_FOLDER = "output"
+MEDIA_SERVER_URL = "http://www.ijoyplus.com"

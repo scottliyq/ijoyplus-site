@@ -21,3 +21,7 @@ gem 'slim'
 gem 'activeadmin'
 gem 'tinymce-rails'
 gem 'capistrano'
+
+group :development do 
+	gem 'thin'
+end
