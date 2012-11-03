@@ -5,3 +5,5 @@
 		ul
 			- for article in @articles do 
 				li: a[href="/news/#{article.slug}"] =article.title
+
+= paginate @articles
