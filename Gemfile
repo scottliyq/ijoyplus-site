@@ -19,7 +19,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'slim'
 gem 'activeadmin'
-gem 'tinymce-rails'
+gem 'rails_kindeditor', '~> 0.3.8'
 gem 'capistrano'
 
 group :development do 

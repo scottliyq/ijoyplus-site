@@ -12,8 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require tinymce-jquery
-//= require home
+//= require kindeditor
 //= require_tree .
-
-
