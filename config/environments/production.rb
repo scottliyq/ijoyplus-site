@@ -66,6 +66,6 @@ Terrier::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
 
-CMS_URL_GENERATING = "http://localhost:1234/news"
+CMS_URL_GENERATING = "http://staging.joyplus.com"
 STATIC_FOLDER = "output"
 MEDIA_SERVER_URL = "http://www.ijoyplus.com"
