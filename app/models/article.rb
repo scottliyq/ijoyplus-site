@@ -8,6 +8,8 @@ class Article < ActiveRecord::Base
 	validates :content, :presence => true, :length => { maximum:400000}
 	before_save :generate_slug
 
+	scope :posted, where(:posted => true)
+
 	private
 	def generate_slug
 		self.slug = SecureRandom.uuid if self.slug.blank?
