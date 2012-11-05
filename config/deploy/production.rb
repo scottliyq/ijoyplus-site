@@ -3,6 +3,7 @@ set :bundle_without, [:darwin, :development, :test]
 
 role :web, "122.226.109.67"                          # Your HTTP server, Apache/etc
 role :app, "122.226.109.67"                          # This may be the same as your `Web` server
+role :db, "122.226.109.67", :primary => true
 
 set :branch, "master"
 

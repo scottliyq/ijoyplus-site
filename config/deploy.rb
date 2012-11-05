@@ -3,9 +3,6 @@ set :default_stage, "staging"
 require 'capistrano/ext/multistage'
 require "bundler/capistrano"
 
-set :whenever_environment, defer { stage }
-require "whenever/capistrano"
-
 set :application, "terrier"
 set :repository,  "scm@project.diggerlab.com:terrier.git"
 set :branch, "master"
