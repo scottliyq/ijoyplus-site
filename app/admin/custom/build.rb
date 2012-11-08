@@ -42,11 +42,10 @@ ActiveAdmin.register_page "Deploy" do
       	system "cd #{Rails.root.join('public')} && mkdir #{STATIC_FOLDER}"
       	system "cd #{Rails.root.join('public', STATIC_FOLDER)} && wget --html-extension -m -nH -nv -k #{CMS_URL_GENERATING} &"
       	flash.now[:notice] = 'Please wait a few sencods before files being generated and ready to preview.'
-      	# system "cd #{Rails.root} && rake static:wget --trace 2>&1 >> #{Rails.root}/log/rake.log &"
       elsif request.put?
       	# deploy action
-      	# result = system("rsync ...")
-      	# flash.now[:notice] = 'All files have been synced to server successfully.' if result
+      	result = system("rsync -azv --exclude=.git #{Rails.root.join('public', STATIC_FOLDER)}/ /home/webuser/www/joyplus/")
+      	flash.now[:notice] = 'All files have been synced to server successfully.' if result
       end
       
     end

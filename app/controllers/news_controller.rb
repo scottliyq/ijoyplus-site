@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
 	def index
 		@categories = Category.all
-		@acticles = Article.where(:posted => true).page(params[:page]).per(10)
+		@acticles = Article.posted.page(params[:page]).per(10)
 	end
 
 

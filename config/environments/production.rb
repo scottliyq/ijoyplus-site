@@ -46,7 +46,7 @@ Terrier::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  config.assets.precompile += %w( active_admin.js active_admin.css active_admin/print.css )
+  config.assets.precompile += %w( active_admin.js active_admin.css active_admin/print.css kindeditor_custom.js)
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
@@ -66,6 +66,6 @@ Terrier::Application.configure do
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 end
 
-CMS_URL_GENERATING = "http://localhost:1234/news"
+CMS_URL_GENERATING = "http://staging.joyplus.tv"
 STATIC_FOLDER = "output"
-MEDIA_SERVER_URL = "http://www.ijoyplus.com"
+MEDIA_SERVER_URL = "http://prod.joyplus.tv"
