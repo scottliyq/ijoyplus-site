@@ -6,9 +6,10 @@ Rails to static website.
 
 1. bundle install
 2. rake db:migrate
-3. http://localhost:1234/admin
+3. rails s thin
+4. http://localhost:1234/admin
 	
 		Account: admin@example.com
 		Password: password
 
-4. update development.rb/production.rb constants
+5. update development.rb/production.rb constants
