@@ -91,7 +91,9 @@ a:hover{
 .font_14 {
   font-size: 14px;
   line-height: 18px; }
-
+.hide{
+  display:none;
+}
 
 /******头部*****/   
 #header{
@@ -237,7 +239,15 @@ a:hover{
   &.joinus{
     background:image-url("banner_joinus.jpg");
   }
-  
+  &.contact{
+    background:image-url("banner_contact.jpg");
+  }
+  &.cooperation{
+    background:image-url("banner_cooperation.jpg");
+  }
+  &.products{
+    background:image-url("banner_products.jpg");
+  }
 }
 
 /******end 头部*****/ 
@@ -316,7 +326,15 @@ a:hover{
     padding:4px 0;
     line-height:24px;
   }
-
+  .text p{
+    line-height:28px;
+  }
+  h3{
+    font-weight:normal;
+    font-size:16px;
+    line-height:22px;
+    padding-top:15px
+  }
   .title{
     width:1003px;
     height:36px;
@@ -329,7 +347,15 @@ a:hover{
     }
     &.joinus{
       background:image-url("join_title.gif") no-repeat;
-     
+    }
+    &.contact{
+      background:image-url("contact_title.gif") no-repeat;
+    }
+    &.cooperation{
+      background:image-url("cooperation_title.gif") no-repeat;
+    }
+    &.products{
+      background:image-url("products_title.gif") no-repeat;
     }
   }
   .submenu{
@@ -390,6 +416,29 @@ a:hover{
     }
     .mainbody{
       font-size:14px;
+      h2 p{
+        line-height:28px;
+      }
+    }
+    .product{
+      width:auto;
+      background-image:image-url("allbg.png");
+      background-repeat:no-repeat;
+      height:32px;
+      color:#005AA3;
+      font-size:16px;
+      padding-left:40px;
+      line-height:32px;
+      margin:15px 0;
+      &.a{
+        background-position:0 -248px;
+      }
+      &.b{
+        background-position:0 -290px;
+      }
+      &.c{
+        background-position:0 -332px;
+      }
     }
   }
   /****翻页****/
