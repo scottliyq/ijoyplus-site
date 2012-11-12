@@ -11,4 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require slides.min.jquery
+//= require kindeditor
+//= require_tree .

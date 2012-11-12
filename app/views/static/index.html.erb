@@ -32,7 +32,7 @@
 		</div>
 		<ul class="news_list">
 			<% Article.posted.first(5).each do |article| %>
-			<li><%= link_to short_text(article.title, 18), news_path(article.slug) %><span><%= beauty_time article.created_at %></span></li>
+			<li><%= link_to short_text(article.title, 18), news_path(article.slug) %><span><%= format_time article.created_at %></span></li>
 			<% end %>
 		</ul>
 		
@@ -47,6 +47,7 @@
 	</div>
 	<div class="clear"></div>
 </div>
+<img src="/assets/loading.gif" class="hide">
 <% end %>
 <% content_for :head do %>
 	<script type="text/javascript">
