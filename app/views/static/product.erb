@@ -1,38 +1,22 @@
+<%= content_for :main do %>
 <div id="miniheader">
 	<div class="banner products" title="产品"></div>
 </div>
-<SCRIPT language=javascript type=text/javascript>
-	function ShowSub(id_num,num){ 
-	 for(var i = 0;i <= 3;i++){
-	  if(GetObj("S_Menu_" + id_num + i)){GetObj("S_Menu_" + id_num + i).className = '';}
-	  if(GetObj("S_Cont_" + id_num + i)){GetObj("S_Cont_" + id_num + i).style.display = 'none';}
-	 }
-	 if(GetObj("S_Menu_" + id_num + num)){GetObj("S_Menu_" + id_num + num).className = 'click';}
-	 if(GetObj("S_Cont_" + id_num + num)){GetObj("S_Cont_" + id_num + num).style.display = 'block';}
-	}
-	function GetObj(objName){
-	 if(document.getElementById){
-	  return eval('document.getElementById("' + objName + '")');
-	 }else{
-	  return eval('document.all.' + objName);
-	 }
-	}
-</SCRIPT>
 <div id="content">
 	<div class="title products" title="产品"></div>
 	<div class="submenu">
-		<ul>
-			<li onclick=ShowSub(3,1) id="S_Menu_31" class="click" >
+		<ul id="product_links">
+			<li data-product-id='1' class="click" >
 				悦视频 App
 			</li>
-			<li onclick=ShowSub(3,2) id="S_Menu_32">
+			<li data-product-id="2">
 				悦视频盒子
 			</li>
 
 		</ul>
 	</div>
 	<div class="right_box">
-		<div class="mainbody" id="S_Cont_31">
+		<div class="mainbody" id="product-intro-1">
 			<h3 style="text-align:center">悦视频 App</h3>
 			<div class="text">
 				<p style="padding:20px 0">
@@ -46,7 +30,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="mainbody hide" id="S_Cont_32">
+		<div class="mainbody hide" id="product-intro-2">
 			<h3 style="text-align:center">悦视频盒子</h3>
 			<div class="text">
 				<p class="product a">分享生活和爱的乐趣</p>
@@ -76,3 +60,15 @@
 	</div>
 	<div class="clear"></div>
 </div>
+
+<script type="text/javascript">
+	$(function(){
+		$('#product_links li').live('click', function(){
+			$(".mainbody").hide();
+			$(this).parent('ul').find('li').removeClass('click');
+			$(this).addClass('click');
+			$("#product-intro-" + $(this).attr('data-product-id')).show();
+		})
+	})
+</script>
+<% end %>

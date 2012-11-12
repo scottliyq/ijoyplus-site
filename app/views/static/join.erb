@@ -94,6 +94,8 @@
 $(function(){
 	$("#job_titles li").live('click', function(){
 		$('.mainbody').hide();
+		$(this).parent('ul').find('li').removeClass('click');
+		$(this).addClass('click');
 		$('#job_description_'+ $(this).attr('data-job-id')).show();
 	})
 })
