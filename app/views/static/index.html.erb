@@ -1,24 +1,13 @@
+<%= content_for :main do %>
 <div id="header">
-	<script src="/assets/slides.min.jquery.js"></script>
-	<script>
-		$(function(){
-			$('#slides').slides({
-				preload: true,
-				preloadImage: '/assets/loading.gif',
-				play: 3000,
-				pause: 2500,
-				hoverPause: true
-			});
-		});
-	</script>
 	<div id="example">
-	    <div id="slides">
-	      <div class="slides_container">
-	        <div><img src="/assets/slide_1.png" alt=""></div>
-	        <div><img src="/assets/slide_2.png" alt=""></div>
-	      </div>
-	    </div>
-  	</div>
+    <div id="slides">
+      <div class="slides_container">
+        <div><img src="/assets/slide_1.png" alt=""></div>
+        <div><img src="/assets/slide_2.png" alt=""></div>
+      </div>
+    </div>
+	</div>
 </div>
 
 <div id="content">
@@ -26,7 +15,7 @@
 		<div class="index-title">
 			<span class="font_blue">关于志精</span>
 			<span class="font_gray">About Us</span>  
-			<span class="more"><a href=""></a></span>
+			<span class="more"><a href="/about"></a></span>
 		</div>
 		<h1>志精网络科技洞察消费者视频娱乐消费习惯变革的趋势，致力于成为家庭娱乐分享的引擎…</h1>
 		<h2>
@@ -39,7 +28,7 @@
 		<div class="index-title">
 			<span class="font_blue">最新动态</span>
 			<span class="font_gray">News</span>  
-			<span class="more"><a href=""></a></span>
+			<span class="more"><a href="/news"></a></span>
 		</div>
 		<ul class="news_list">
 			<li><a href="">庹震到腾讯公司调研</a><span>2012-10-10</span></li>
@@ -60,3 +49,19 @@
 	</div>
 	<div class="clear"></div>
 </div>
+<% end %>
+<% content_for :head do %>
+	<script type="text/javascript" src="/assets/slides.min.jquery.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: '/assets/loading.gif',
+			play: 3000,
+			pause: 2500,
+			hoverPause: true
+		});
+	});
+	</script>
+<% end %>
+

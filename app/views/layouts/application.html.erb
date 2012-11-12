@@ -1,25 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>上海志精网络科技有限公司</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
+	<title>上海志精网络科技有限公司</title>
+	<%= stylesheet_link_tag "application", :media => "all" %>
+	<%= javascript_include_tag "application" %>
+	<%= csrf_meta_tags %>
+	<%= yield :head %>
 </head>
 <body>
 <div id="mainmenu">
 	<img src="/assets/logo.gif" alt="" class="floleft">
-	<div class="language">
+	<!-- <div class="language">
 		<a href="" class="active">中文</a>  |  <a href="">English</a>
-	</div>
+	</div> -->
 	<ul>
-		<li><a href="index_1.html">首 页</a></li>
-		<li><a href="about.html" class="click">关于我们</a></li>
-		<li><a href="news_1.html">最新动态</a></li>
-		<li><a href="products.html">产品</a></li>
-		<li><a href="cooperation.html">商业合作</a></li>
-		<li><a href="join.html">加入我们</a></li>
-		<li><a href="contact.html">联系方式</a></li>
+		<li>
+			<%= highlight_menu_if_current "首页", '/', 'click' %>
+		</li>
+		<li><%= highlight_menu_if_current "关于我们", '/about', 'click' %>
+		</li>
+		<li>
+			<%= highlight_menu_if_current "最新动态", '/news', 'click' %>
+		</li>
+		<li>
+			<%= highlight_menu_if_current "产品", '/product', 'click' %>
+		</li>
+		<li>
+			<%= highlight_menu_if_current "商业合作", '/business', 'click' %>
+		</li>
+		<li>
+			<%= highlight_menu_if_current "加入我们", '/join', 'click' %>
+		</li>
+		<li>
+			<%= highlight_menu_if_current "联系我们", '/contact', 'click' %>
+		</li>
 	</ul>
 </div>
 <%= yield :main %>

@@ -1,41 +1,25 @@
+<%= content_for :main do %>
 <div id="miniheader">
 	<div class="banner joinus" title="加入我们"></div>
 </div>
-<SCRIPT language=javascript type=text/javascript>
-	function ShowSub(id_num,num){ 
-	 for(var i = 0;i <= 3;i++){
-	  if(GetObj("S_Menu_" + id_num + i)){GetObj("S_Menu_" + id_num + i).className = '';}
-	  if(GetObj("S_Cont_" + id_num + i)){GetObj("S_Cont_" + id_num + i).style.display = 'none';}
-	 }
-	 if(GetObj("S_Menu_" + id_num + num)){GetObj("S_Menu_" + id_num + num).className = 'click';}
-	 if(GetObj("S_Cont_" + id_num + num)){GetObj("S_Cont_" + id_num + num).style.display = 'block';}
-	}
-	function GetObj(objName){
-	 if(document.getElementById){
-	  return eval('document.getElementById("' + objName + '")');
-	 }else{
-	  return eval('document.all.' + objName);
-	 }
-	}
-</SCRIPT>
 <div id="content">
 	<div class="title joinus" title="加入我们"></div>
 	<div class="submenu">
-		<ul>
-			<li class="click" onclick=ShowSub(3,1) id="S_Menu_31">
+		<ul id="job_titles">
+			<li class="click" data-job-id="1">
 				iOS开发工程师
 			</li>
-			<li onclick=ShowSub(3,2) id="S_Menu_32">
+			<li data-job-id="2">
 				Android开发工程师
 			</li>
-			<li onclick=ShowSub(3,3) id="S_Menu_33">
+			<li data-job-id="3">
 				Php开发工程师
 			</li>
 
 		</ul>
 	</div>
 	<div class="right_box">
-		<div class="mainbody" id="S_Cont_31">
+		<div class="mainbody" id="job_description_1">
 			<h3>iOS开发工程师</h3>
 			<h2>
 				<p>
@@ -57,7 +41,7 @@
 				</p>
 			</h2>
 		</div>
-		<div class="mainbody hide" id="S_Cont_32">
+		<div class="mainbody hide" id="job_description_2">
 			<h3>Android开发工程师</h3>
 			<h2>
 				<p>
@@ -80,7 +64,7 @@
 				</p>
 			</h2>
 		</div>
-		<div class="mainbody hide" id="S_Cont_33">
+		<div class="mainbody hide" id="job_description_3">
 			<h3>Php开发工程师</h3>
 			<h2>
 				<p>
@@ -106,3 +90,13 @@
 	</div>
 	<div class="clear"></div>
 </div>
+<script type="text/javascript">
+$(function(){
+	$("#job_titles li").live('click', function(){
+		$('.mainbody').hide();
+		$('#job_description_'+ $(this).attr('data-job-id')).show();
+	})
+})
+</script>
+<% end %>
+

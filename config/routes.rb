@@ -12,5 +12,6 @@ Terrier::Application.routes.draw do
 		get 'page/:page', :action => :index, :on => :collection	  
   end
 
+  root to: 'static#index'
   match ':action'  => 'static#:action'
 end

@@ -16,4 +16,10 @@ module ApplicationHelper
       "#{distance_of_time_in_words_to_now(time)}前"
     end
   end
+
+  def highlight_menu_if_current(text, link, css)
+    link_to_unless_current text, link do  
+      link_to text, link, :class => css
+    end
+  end
 end
