@@ -1,12 +1,11 @@
 class NewsController < ApplicationController
+	layout 'news'
+
 	def index
-		@categories = Category.all
-		@acticles = Article.posted.page(params[:page]).per(10)
+		@articles = Article.posted.page(params[:page])
 	end
 
-
 	def show
-		@article = Article.find_by_slug(params[:id])
-		
+		@article = Article.find_by_slug(params[:id])		
 	end
 end

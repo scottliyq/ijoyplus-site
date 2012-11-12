@@ -1,0 +1,6 @@
+<%= content_for :content do  %>
+	<h1 class="news_title"><%= @article.title %> <span><%= beauty_time @article.created_at %></span></h1>	
+	<h2 class="news_show">
+		<%= @article.content.html_safe %>
+	</h2>
+<% end %>

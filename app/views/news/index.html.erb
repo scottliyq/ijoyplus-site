@@ -1,0 +1,8 @@
+<%= content_for :content do  %>
+<ul class="news_list">
+	<% @articles.each do |article| %>
+	<li><%= link_to article.title, news_path(article.slug) %><span><%= beauty_time article.created_at %></span></li>
+	<% end if @articles %>
+</ul>
+<%= paginate @articles if @articles %>
+<% end %>

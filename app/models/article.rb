@@ -8,7 +8,7 @@ class Article < ActiveRecord::Base
 	validates :content, :presence => true, :length => { maximum:400000}
 	before_save :generate_slug
 
-	scope :posted, where(:posted => true)
+	scope :posted, where(:posted => true) && order('id desc')
 
 	private
 	def generate_slug
