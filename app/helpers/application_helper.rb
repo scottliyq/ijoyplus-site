@@ -22,4 +22,8 @@ module ApplicationHelper
       link_to text, link, :class => css
     end
   end
+
+  def short_text(text, len, omit = true)
+    text.mb_chars[0..len] + (omit && (text.mb_chars.size > len || text.blank?) ? ' ..' : '')
+  end
 end

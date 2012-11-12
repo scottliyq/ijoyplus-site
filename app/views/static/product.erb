@@ -6,10 +6,10 @@
 	<div class="title products" title="产品"></div>
 	<div class="submenu">
 		<ul id="product_links">
-			<li data-product-id='1' class="click" >
+			<li data-product-id='1' class="click" name="jios" >
 				悦视频 App
 			</li>
-			<li data-product-id="2">
+			<li data-product-id="2" name="jtv">
 				悦视频盒子
 			</li>
 
@@ -68,7 +68,16 @@
 			$(this).parent('ul').find('li').removeClass('click');
 			$(this).addClass('click');
 			$("#product-intro-" + $(this).attr('data-product-id')).show();
-		})
+			$('html, body').animate({
+			   scrollTop: $("#content").offset().top
+			}, 1000);
+		});
+
+		var hash = window.location.hash.replace('#', '');
+		if(hash != null && hash != ''){
+			var item = $("#product_links li[name='"+ hash +"']");
+			item.trigger('click');
+		}
 	})
 </script>
 <% end %>
