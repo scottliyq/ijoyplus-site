@@ -1,24 +1,42 @@
 <div id="miniheader">
 	<div class="banner news" title="Enjoy sharing life 分享生活和爱的乐趣"></div>
 </div>
+<SCRIPT language=javascript type=text/javascript>
+	function ShowSub(id_num,num){ 
+	 for(var i = 0;i <= 3;i++){
+	  if(GetObj("S_Menu_" + id_num + i)){GetObj("S_Menu_" + id_num + i).className = '';}
+	  if(GetObj("S_Cont_" + id_num + i)){GetObj("S_Cont_" + id_num + i).style.display = 'none';}
+	 }
+	 if(GetObj("S_Menu_" + id_num + num)){GetObj("S_Menu_" + id_num + num).className = 'click';}
+	 if(GetObj("S_Cont_" + id_num + num)){GetObj("S_Cont_" + id_num + num).style.display = 'block';}
+	}
+	function GetObj(objName){
+	 if(document.getElementById){
+	  return eval('document.getElementById("' + objName + '")');
+	 }else{
+	  return eval('document.all.' + objName);
+	 }
+	}
+</SCRIPT>
 <div id="content">
 	<div class="title aboutus" title="关于我们"></div>
 	<div class="submenu">
 		<ul>
-			<li class="click">
+			<li class="click" onclick=ShowSub(3,1) id="S_Menu_31">
 				公司介绍
 			</li>
-			<li>
+			<li onclick=ShowSub(3,2) id="S_Menu_32">
 				发展大事记
 			</li>
-			<li>
+			<li onclick=ShowSub(3,3) id="S_Menu_33">
 				管理团队
 			</li>
 
 		</ul>
 	</div>
 	<div class="right_box">
-		<div class="mainbody">
+		<div class="mainbody" id="S_Cont_31">
+			<h3 class="font_blue">公司介绍</h3>
 			<h1>志精网络科技洞察消费者视频娱乐消费习惯变革的趋势，致力于成为家庭娱乐分享的引擎。</h1>
 			<h2>
 				<p><span class="font_blue">使命：</span>分享生活和爱的乐趣</p>
@@ -33,6 +51,12 @@
                 </p>
 	            <p><span class="font_blue">口号：</span>Enjoy sharing life  看你想看</p>
 			</h2>
+		</div>
+		<div class="mainbody hide" id="S_Cont_32">
+			<h3 class="font_blue">发展大事记</h3>
+		</div>
+		<div class="mainbody hide" id="S_Cont_33">
+			<h3 class="font_blue">管理团队</h3>
 		</div>
 	</div>
 	<div class="clear"></div>
