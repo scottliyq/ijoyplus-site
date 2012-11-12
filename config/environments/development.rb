@@ -39,3 +39,4 @@ end
 CMS_URL_GENERATING = "http://localhost:1234/news"
 STATIC_FOLDER = "output"
 MEDIA_SERVER_URL = "http://www.ijoyplus.com"
+MEDIA_SERVER_SYNC_PATH = "/home/webuser/www/joyplus/"

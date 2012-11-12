@@ -13,8 +13,18 @@ ActiveAdmin.register_page "Deploy" do
 
 		  column do 
 		  	panel "2. Preview " do
-		  		div pre code `cd #{Rails.root.join('public', STATIC_FOLDER)} && ls -l | awk '{print $6,$7,$8,$9}'`
-		  		div link_to('preview static site', "/#{STATIC_FOLDER}/", :target => 'blank')
+		  		# div pre code `cd #{Rails.root.join('public', STATIC_FOLDER)} && ls -l | awk '{print $6,$7,$8,$9}'`
+		  		div do 
+			  		semantic_form_for :preview, :method => :GET do |f|
+				      f.actions do 
+				      	f.submit 'Refresh'
+				      end 
+				    end
+			    end
+			    span `cd #{Rails.root.join('public', STATIC_FOLDER)} && ls | wc -l` + " files / folders"
+			    span ' | '
+			    span link_to('preview static site', "/#{STATIC_FOLDER}/index.html", :target => 'blank')
+		  		
 		  	end
 		  end
 
@@ -23,7 +33,7 @@ ActiveAdmin.register_page "Deploy" do
 		  		div do
 			  		semantic_form_for :deploy, :method => :put do |f|
 				      f.actions do 
-				      	f.submit 'Deploy'
+				      	f.submit 'Deploy', :onclick => "return window.confirm('This will override all files on target server, are you really sure?')"
 				      end 
 				    end
 				  end
@@ -44,7 +54,7 @@ ActiveAdmin.register_page "Deploy" do
       	flash.now[:notice] = 'Please wait a few sencods before files being generated and ready to preview.'
       elsif request.put?
       	# deploy action
-      	result = system("rsync -azv --exclude=.git #{Rails.root.join('public', STATIC_FOLDER)}/ /home/webuser/www/joyplus/")
+      	result = system("rsync -azv --exclude=.git #{Rails.root.join('public', STATIC_FOLDER)}/ #{MEDIA_SERVER_SYNC_PATH}")
       	flash.now[:notice] = 'All files have been synced to server successfully.' if result
       end
       
