@@ -1,0 +1,22 @@
+<% content_for :main do %>
+<div id="miniheader">
+	<div class="banner news" title="Enjoy sharing life 分享生活和爱的乐趣"></div>
+</div>
+<div id="content">
+	<div class="title news" title="最新动态"></div>
+	<div class="submenu">
+		<ul>
+			<% Category.all.each do |category| %>
+			<li <% if category == @category %>class="click"<% end %>>
+				<%= link_to category.name, category_path(category.slug) %>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="right_box">
+		<%= yield :content %>
+	</div>
+	<div class="clear"></div>
+</div>
+<% end %>
+<%= render :template => 'layouts/application' %>
