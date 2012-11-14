@@ -3,16 +3,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Countdown that doesn't sucks</title>
+    <title></title>
     <script src="assets/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/slides.min.jquery.js" type="text/javascript" charset="utf-8"></script>
     <script src="assets/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="assets/countdown.css" />
+
     <script type="text/javascript">
       $(function(){
+        ts = new Date(2012, 11, 25),
+        newYear = true;
+        
+        if((new Date()) > ts){
+          // The new year is here! Count towards something else.
+          // Notice the *1000 at the end - time must be in milliseconds
+          ts = (new Date()).getTime() + 10*24*60*60*1000;
+          newYear = false;
+        }
+          
         $('#counter').countdown({
-          image: 'assets/digits.png',
-          startTime: '01:12:12:00'
-        });
+          timestamp : (new Date()).getTime() + 10*24*60*60*1000,
+          callback  : function(){}
+          });
 
         $('#slides').slides({
           preload: true,
@@ -214,15 +226,19 @@
       overflow:hidden;
       position:relative;
     }
+
+    #counter_container{
+      z-index:99999;
+      position:absolute;
+      top:20px;
+      right:20px;
+    }
+    #counter{
+    }
     </style>
   </head>
 <body>
     <div id="header">
-      <!-- <ul class="cps">
-        <li class="cp1 hide"></li>
-        <li class="cp2 "></li>
-        <li class="cp3 hide"></li>
-      </ul> -->
       <div id="slides">
         <div class="slides_container">
           
@@ -237,19 +253,22 @@
         </ul>
       </div>
     </div>
-      <div class="box">
-        <div class="about">
-          <a href="#"><img src="assets/cp_r1_c1.jpg" alt="" /></a>
-        </div>
-        <div class="bbs">
-          <a href="http://bbs.joyplus.tv"><img src="assets/cp_r1_c3.jpg" alt="" /></a>
-        </div>
-        <div class="dlbtn">
-          <a href="#"><img src="assets/cp_r1_c5.jpg" alt="" /></a>
-        </div>
-        <div class="clear"></div>
+    <div id="counter_container">
+      <div id="counter"></div>  
+    </div>
+    <div class="box">
+      <div class="about">
+        <a href="#"><img src="assets/cp_r1_c1.jpg" alt="" /></a>
       </div>
-<div class="clear"></div>
+      <div class="bbs">
+        <a href="http://bbs.joyplus.tv"><img src="assets/cp_r1_c3.jpg" alt="" /></a>
+      </div>
+      <div class="dlbtn">
+        <a href="#"><img src="assets/cp_r1_c5.jpg" alt="" /></a>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
     <div class="footer">
       <div>
       <span class="floleft"> ©2012   悦视频版权所有</span>
