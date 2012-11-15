@@ -21,6 +21,7 @@ gem 'slim'
 gem 'activeadmin'
 gem 'rails_kindeditor', '~> 0.3.8'
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 group :development do 
 	gem 'thin'
