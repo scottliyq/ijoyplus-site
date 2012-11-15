@@ -453,6 +453,30 @@ a:hover{
         background-position:0 -332px;
       }
     }
+    .members{
+      padding:10px 0;
+      li{
+        border-bottom:1px dotted #e0e0e0;
+        padding-bottom:30px;
+        margin-bottom:30px;
+        img{
+          width:170px;
+          height:190px;
+          float:left;
+
+        }
+        span{
+          width:500px;
+          float:left;
+          padding:5px 0 0 20px;
+          line-height:22px;
+          h5{
+            font-size:16px;
+            padding-bottom:5px;
+          }
+        }
+      }
+    }
   }
   /****翻页****/
   .pagination {
