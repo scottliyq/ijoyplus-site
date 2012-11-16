@@ -4,5 +4,6 @@
 	<li><%= link_to article.title, news_path(article.slug) %><span><%= format_time article.created_at %></span></li>
 	<% end if @articles %>
 </ul>
+<div class="clear"></div>
 <%= paginate @articles if @articles %>
 <% end %>
