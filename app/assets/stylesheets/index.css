@@ -16,6 +16,9 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
   	font-family:"微软雅黑", Arial, Helvetica, sans-serif;
     overflow-x: hidden ; 
   }
+  img{
+  border:none;
+  }
   a {
   	text-decoration: none;
   	color: #333
@@ -70,15 +73,15 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
   .box {
   	width: 1003px;
   	height: 107px;
-  	margin: 0 auto;
+  	margin: 40px auto;
   }
-  .box div {
+  .box img{
   	width: 300px;
   	float: left;
-  	margin: 40px 0 0;
+    height: 107px;
   }
-  .box div.bbs {
-  	margin:40px 50px 0;
+  .box img.bbs {
+  	margin:0 50px;
   }
   .footer {
   	width: 100%;

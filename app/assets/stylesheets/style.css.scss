@@ -22,6 +22,9 @@ body {
   -webkit-user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
 }
+img{
+  border:none;
+}
 
 input, button, select, textarea {
   outline: none;
@@ -157,6 +160,7 @@ a:hover{
       float: left;
       background:image-url("line.gif") no-repeat right 0px;
       padding:0 20px 0px 20px;
+      white-space:nowrap;
       &:last-child{
         background:none;
       }
@@ -284,7 +288,7 @@ a:hover{
         background:image-url("dot.gif") no-repeat left center;
         padding:8px 0 8px 15px;
         font-size:14px;
-        span{
+        .date{
           float:right;
           color:#999;
           font-size:12px;

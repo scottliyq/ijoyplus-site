@@ -1,5 +1,5 @@
 class StaticController < ApplicationController
-	def index
+	def landing
 		render layout: false
 	end
 end

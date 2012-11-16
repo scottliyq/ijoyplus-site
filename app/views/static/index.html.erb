@@ -1,66 +1,68 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>志精科技</title>
-    <meta name="keywords" content="视频，悦视频，智能电视，电影，电视剧，综艺，聚合，悦享家，悦享TV，视频盒子" />
-    <meta name="description" content="看你想看,轻松连接，分享生活和爱的乐趣" />
-    <link rel="shortcut icon" href="/assets/favicon.ico">
-    <%= stylesheet_link_tag "index", "countdown", :media => "all" %>
-    <%= javascript_include_tag "jquery.min", "slides.min.jquery", "jquery.countdown.min" %>
-
-    <script type="text/javascript">
-      $(function(){
-        $('#counter').countdown({
-          timestamp : (new Date(2012, 10, 25)).getTime(),
-          callback  : function(){}
-          });
-
-        $('#slides').slides({
-          preload: true,
-          preloadImage: '/assets/loading.gif',
-          play: 3000,
-          pause: 2500,
-          hoverPause: true,
-          generatePagination: false
-        });
-      });
-    </script>
-    </head>
-    <body>
-    <div id="header">
-      <div style="width:1280px; position:relative; margin:0 auto">
-        <div id="counter_container">
-          <div id="counter"></div>
-        </div>
-      
-      <div id="slides">
-        <div class="slides_container">
-          <div><img src="/assets/cp1.jpg" alt=""></div>
-          <div><img src="/assets/cp2.jpg" alt=""></div>
-          <div><img src="/assets/cp3.jpg" alt=""></div>
-      </div>
-      
-        <ul class="pagination">
-          <li><a href="#"><img src="/assets/cp1_small.jpg"></a></li>
-          <li><a href="#"><img src="/assets/cp2_small.jpg" alt="" ></a></li>
-          <li><a href="#"><img src="/assets/cp3_small.jpg" alt=""></a></li>
-        </ul>
+<%= content_for :main do %>
+<div id="header">
+	<div id="example">
+    <div id="slides">
+      <div class="slides_container">
+        <div><img src="/assets/slide_1.jpg" alt=""></div>
+        <div><img src="/assets/slide_2.jpg" alt=""></div>
       </div>
     </div>
-    </div>
+	</div>
+</div>
 
-<div class="box">
-      <div class="about"><a href="#"><img src="assets/cp_r1_c1.jpg" alt="" /></a> </div>
-      <div class="bbs"><a href="http://bbs.joyplus.tv" target="blank"><img src="assets/cp_r1_c3.jpg" alt="" /></a> </div>
-      <div class="dlbtn"><a href="#" ><img src="assets/cp_r1_c5.jpg" alt="" /></a> </div>
-      <div class="clear"></div>
-    </div>
-<div class="clear"></div>
-<div class="footer">
-      <div> <span class="floleft"><img src="assets/joypluslogo.png" alt="joypluslogo" /></span><span class="floleft" style="padding:5px 20px">©2012   上海志精网络科技版权所有</span> <span class="floright"> <span class="follow"><a href="http://e.weibo.com/u/2937369437" target="blank">悦享TV新浪微博</a></span> <span class="followtx"><a href="http://t.qq.com/ijoyplus
-" target="blank">悦享TV腾讯微博</a></span> <span class="contact"><a href="mailto:marketing@joyplus.tv">联系我们</a></span> </span> </div>
-    </div>
-</body>
-</html>
+<div id="content">
+	<div class="about">
+		<div class="index-title">
+			<span class="font_blue floleft">关于志精</span>
+			<span class="font_gray floleft">About Us</span>  
+			<span class="more"><a href="/about"></a></span>
+			<div class="clear"></div>
+		</div>
+		<h1>志精网络科技洞察消费者视频娱乐消费习惯变革的趋势，致力于成为家庭娱乐分享的引擎…</h1>
+		<h2>
+			<p><span class="font_blue">使命：</span>分享生活和爱的乐趣</p>
+			<p><span class="font_blue">愿景：</span>成为家庭娱乐分享引擎</p>
+			<p><span class="font_blue">口号：</span>Enjoy sharing life </p>
+
+		</h2>
+	</div>
+	<div class="index-news">
+		<div class="index-title">
+			<span class="font_blue floleft">最新动态</span>
+			<span class="font_gray floleft">News</span>  
+			<span class="more"><a href="/news"></a></span>
+			<div class="clear"></div>
+		</div>
+		<ul class="news_list">
+			<% Article.posted.first(5).each do |article| %>
+			<li><%= link_to short_text(article.title, 15), news_path(article.slug) %><span><%= format_time article.created_at %></span></li>
+			<% end %>
+		</ul>
+		
+	</div>
+	<div class="index-ad">
+		<p>
+			<a href="/product#jios"><img src="/assets/ios_ad.jpg" alt="iPad / iPhone应用下载"></a>
+		</p>
+		<p>
+			<a href="/product#jtv"><img src="/assets/android_ad.jpg" alt="悦TV"></a>
+		</p>
+	</div>
+	<div class="clear"></div>
+</div>
+<img src="/assets/loading.gif" class="hide">
+<% end %>
+<% content_for :head do %>
+	<script type="text/javascript">
+	$(function(){
+		$('#slides').slides({
+			preload: true,
+			preloadImage: '/assets/loading.gif',
+			play: 3000,
+			pause: 2500,
+			hoverPause: true
+		});
+	});
+	</script>
+<% end %>
+
