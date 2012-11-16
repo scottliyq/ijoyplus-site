@@ -152,14 +152,14 @@ a:hover{
     }
   }
   ul{
-    width:575px;
+    width:635px;
     padding:50px 0 0 100px;
     font-size:16px;
     float: right;
     li{
       float: left;
       background:image-url("line.gif") no-repeat right 0px;
-      padding:0 20px 0px 20px;
+      padding:0 25px 0px 25px;
       white-space:nowrap;
       &:last-child{
         background:none;
@@ -417,13 +417,13 @@ a:hover{
       font-size:18px;
       color:#0059A3;
       font-weight:normal;
-      padding-bottom:15px;
       border-bottom:1px solid #ccc;
-      span{
+      height:35px;
+      .date{
         color:#666;
         font-size:12px;
         float:right;
-        padding:5px 5px 0 0;
+        padding:0 5px 0 0;
       }
     }
     h2.news_show{

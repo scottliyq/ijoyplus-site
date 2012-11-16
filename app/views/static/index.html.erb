@@ -35,7 +35,7 @@
 		</div>
 		<ul class="news_list">
 			<% Article.posted.first(5).each do |article| %>
-			<li><%= link_to short_text(article.title, 15), news_path(article.slug) %><span><%= format_time article.created_at %></span></li>
+			<li><span class="floleft"><%= link_to short_text(article.title, 15), news_path(article.slug) %></span><span class="date"><%= format_time article.created_at %></span><div class="clear"></div></li>
 			<% end %>
 		</ul>
 		
