@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <script src="assets/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/slides.min.jquery.js" type="text/javascript" charset="utf-8"></script>
+    <script src="assets/jquery.countdown.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="assets/countdown.css" />
+    <link rel="stylesheet" href="assets/index.css" />
+    <script type="text/javascript">
+      $(function(){
+        ts = new Date(2012, 11, 23),
+        newYear = true;
+        
+        if((new Date()) > ts){
+          // The new year is here! Count towards something else.
+          // Notice the *1000 at the end - time must be in milliseconds
+          ts = (new Date()).getTime() + 8*24*60*60*1000;
+          newYear = false;
+        }
+          
+        $('#counter').countdown({
+          timestamp : (new Date(2012, 11, 23)).getTime(),
+          callback  : function(){}
+          });
+
+        $('#slides').slides({
+          preload: true,
+          preloadImage: '/assets/loading.gif',
+          play: 3000,
+          pause: 2500,
+          hoverPause: true,
+          generatePagination: false
+        });
+      });
+    </script>
+    </head>
+    <body>
+    <div id="header">
+      <div style="width:1280px; position:relative; margin:0 auto">
+        <div id="counter_container">
+          <div id="counter"></div>
+        </div>
+      
+      <div id="slides">
+        <div class="slides_container">
+          <div><img src="/assets/cp1.jpg" alt=""></div>
+          <div><img src="/assets/cp2.jpg" alt=""></div>
+          <div><img src="/assets/cp3.jpg" alt=""></div>
+      </div>
+      
+        <ul class="pagination">
+          <li><a href="#"><img src="/assets/cp1_small.jpg"></a></li>
+          <li><a href="#"><img src="/assets/cp2_small.jpg" alt="" ></a></li>
+          <li><a href="#"><img src="/assets/cp3_small.jpg" alt=""></a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+
+<div class="box">
+      <div class="about"><a href="/main"><img src="assets/cp_r1_c1.jpg" alt="" /></a> </div>
+      <div class="bbs"><a href="http://bbs.joyplus.tv" target="blank"><img src="assets/cp_r1_c3.jpg" alt="" /></a> </div>
+      <div class="dlbtn"><a href="#" ><img src="assets/cp_r1_c5.jpg" alt="" /></a> </div>
+      <div class="clear"></div>
+    </div>
+<div class="clear"></div>
+<div class="footer">
+      <div> <span class="floleft"><img src="assets/joypluslogo.png" alt="joypluslogo" /></span><span class="floleft" style="padding:5px 20px">©2012   上海志精网络科技版权所有</span> <span class="floright"> <span class="follow"><a href="http://e.weibo.com/u/2937369437" target="blank">悦享TV新浪微博</a></span> <span class="followtx"><a href="http://t.qq.com/ijoyplus
+" target="blank">悦享TV腾讯微博</a></span> <span class="contact"><a href="mailto:marketing@joyplus.tv">联系我们</a></span> </span> </div>
+    </div>
+</body>
+</html>
