@@ -1,7 +1,7 @@
 <%= content_for :content do  %>
 <ul class="news_list">
 	<% @articles.each do |article| %>
-	<li><%= link_to article.title, news_path(article.slug) %><span><%= format_time article.created_at %></span></li>
+	<li><span class="floleft"><%= link_to article.title, news_path(article.slug) %></span><span class="date"><%= format_time article.created_at %></span></li>
 	<% end if @articles %>
 </ul>
 <div class="clear"></div>
