@@ -1,5 +1,5 @@
 <%= content_for :content do  %>
-	<h1 class="news_title"><span class="floleft"><%= @article.title %></span><span class="date"><%= format_time @article.created_at %></span><div class="clear"></div></h1>	
+	<h1 class="news_title"><span class="floleft"><%= @article.title %></span><span class="date"><%= format_date @article.created_at %></span><div class="clear"></div></h1>	
 	<h2 class="news_show">
 		<%= @article.content.html_safe %>
 	</h2>
