@@ -3,8 +3,8 @@
 <head>
 	<title>志精科技</title>
 	<meta charset="UTF-8" />
-	<meta name="keywords" content="视频，悦视频，智能电视，电影，电视剧，综艺，聚合，悦享家，悦享TV，视频盒子" />
-	<meta name="description" content="看你想看,轻松连接，分享生活和爱的乐趣" />
+	<meta name="keywords" content="娱乐生活分享引擎,视频，悦视频，智能电视，电影，电视剧，综艺，聚合，悦享家，悦享TV，视频盒子" />
+  <meta name="description" content="看你想看,轻松连接，分享生活和爱的乐趣" />
 	<link rel="shortcut icon" href="/assets/favicon.ico">
 	<%= stylesheet_link_tag "application", :media => "all" %>
 	<%= javascript_include_tag "application" %>
@@ -35,14 +35,11 @@
 		<li>
 			<%= highlight_menu_if_current "加入我们", '/join', 'click' %>
 		</li>
-<!-- 		<li>
-			<%= highlight_menu_if_current "联系我们", '/contact', 'click' %>
-		</li> -->
 	</ul>
 </div>
 <%= yield :main %>
 <div id="footer">
-	 ©2012   上海志精网络科技有限公司版权所有
+	 ©2012 上海志精科技版权所有
 </div>
 </body>
 </html>
