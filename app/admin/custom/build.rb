@@ -50,7 +50,15 @@ ActiveAdmin.register_page "Deploy" do
       	# build action
       	system "rm -rf #{Rails.root.join('public', STATIC_FOLDER)}"
       	system "cd #{Rails.root.join('public')} && mkdir #{STATIC_FOLDER}"
-      	system "cd #{Rails.root.join('public', STATIC_FOLDER)} && wget --html-extension -m -nH -nv -k #{CMS_URL_GENERATING} &"
+
+      	# one level output
+      	# system "cd #{Rails.root.join('public', STATIC_FOLDER)} && wget --html-extension -m -nH -nv -k #{CMS_URL_GENERATING} &"
+      	
+      	# landing + portal
+      	system "cd #{Rails.root.join('public', STATIC_FOLDER)} && mkdir #{STATIC_CHILD_FOLDER}"
+      	system "cd #{Rails.root.join('public', STATIC_FOLDER)} && wget --html-extension -m -nH -nv -k -l1 #{CMS_URL_GENERATING}/landing && rm index.html && mv landing.html index.html &"
+      	system "cd #{Rails.root.join('public', STATIC_FOLDER, STATIC_CHILD_FOLDER)} && wget --html-extension -m -nH -nv -k #{CMS_URL_GENERATING} &"
+
       	flash.now[:notice] = 'Please wait a few sencods before files being generated and ready to preview.'
       elsif request.put?
       	# deploy action

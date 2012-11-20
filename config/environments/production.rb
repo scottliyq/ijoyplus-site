@@ -68,5 +68,6 @@ end
 
 CMS_URL_GENERATING = "http://staging.joyplus.tv"
 STATIC_FOLDER = "output"
+STATIC_CHILD_FOLDER = "about"
 MEDIA_SERVER_URL = "http://www.joyplus.tv"
 MEDIA_SERVER_SYNC_PATH = "website@115.239.196.123:/var/www/html/joyplus"

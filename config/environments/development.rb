@@ -36,7 +36,8 @@ Terrier::Application.configure do
   config.assets.debug = true
 end
 
-CMS_URL_GENERATING = "http://localhost:1234/news"
+CMS_URL_GENERATING = "http://localhost:1234"
 STATIC_FOLDER = "output"
-MEDIA_SERVER_URL = "http://www.ijoyplus.com"
-MEDIA_SERVER_SYNC_PATH = "/home/webuser/www/joyplus/"
+STATIC_CHILD_FOLDER = "about"
+MEDIA_SERVER_URL = "http://www.joyplus.tv"
+MEDIA_SERVER_SYNC_PATH = "/tmp/joyplus"
