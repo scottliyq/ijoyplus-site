@@ -5,7 +5,7 @@ require "rvm/capistrano"
 require "bundler/capistrano"
 
 set :application, "terrier"
-set :repository,  "git://github.com/Diggerlab/joyplus-site.git"
+set :repository,  "git://github.com/scottliyq/ijoyplus-site.git"
 set :branch, "master"
 set :user, "gits"
 set :use_sudo, false
