@@ -85,7 +85,7 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
   .footer {
   	width: 100%;
   	height: 84px;
-  	background:url("/assets/footer1.jpg") repeat-x;
+  	background:image-url("footer1.jpg") repeat-x;
   }
   .footer div {
   	width:990px;
@@ -94,15 +94,15 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
   	font-size: 14px;
   }
   .contact {
-  	background:url("/assets/appbtns.png") 0 -296px no-repeat;
+  	background:image-url("appbtns.png") 0 -296px no-repeat;
   	padding:3px 0 0 28px;
   }
   .follow {
-  	background:url("/assets/appbtns.png") 30px -254px no-repeat;
+  	background:image-url("appbtns.png") 30px -254px no-repeat;
   	padding:3px 30px 0 58px;
   }
   .followtx{
-    background:url("/assets/txlogo.png") 0 2px no-repeat;
+    background:image-url("txlogo.png") 0 2px no-repeat;
     padding:3px 30px 3px 22px;
   }
   br {
@@ -186,6 +186,6 @@ html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form
   }
   #counter{
     font-size: 18px;
-    background: url("/assets/timebg.png") no-repeat left 6px;
+    background: image-url("timebg.png") no-repeat left 6px;
     padding-left:0px;
   }
